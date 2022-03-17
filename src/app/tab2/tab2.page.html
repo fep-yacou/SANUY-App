@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            <!-- Ajout annonce -->
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-text-center">
+        <p>Ajouter annonce</p>
+    </div>
+    <form [formGroup]="formulaire" (ngSubmit)="submitForm()">
+        <ion-item lines="none">
+            <p>Photo de l'annonce</p>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-label></ion-label>
+            <ion-input type="file" value="" name="photo" (change)="imgSelect($event)"></ion-input>
+        </ion-item>
+    
+        <ion-item lines="none">
+            <ion-label>Categorie</ion-label>
+            <ion-select formControlName="categorie">
+                <ion-select-option *ngFor="let categorie of listeCategorie" value="{{categorie.idcat}}">
+                    {{categorie.type}}
+                </ion-select-option>
+                <!-- <ion-select-option>1</ion-select-option>
+                <ion-select-option>1</ion-select-option> -->
+            </ion-select>
+        </ion-item>
+    
+        <ion-item lines="none">
+            <ion-label>Description</ion-label>
+            <ion-input name="description" formControlName="description" placeholder="description" type="text"></ion-input>
+        </ion-item>
+    
+        <ion-item lines="none">
+            <ion-label>Ville</ion-label>
+            <ion-input name="ville" formControlName="ville" placeholder="ville" type="text"></ion-input>
+        </ion-item>
+    
+        <ion-item lines="none">
+            <ion-label>Quartier</ion-label>
+            <ion-input name="quartier" formControlName="quartier" placeholder="quartier" type="text"></ion-input>
+        </ion-item>
+
+        <div class="flex">
+            <ion-button type="submit" color="success" shape="round">
+                Ajouter
+            </ion-button>
+            <ion-button color="danger" shape="round">
+                Annuler
+            </ion-button>
+        </div>
+    </form>
+</ion-content>

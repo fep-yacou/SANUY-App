@@ -1,0 +1,27 @@
+@import '~swiper/scss';
+@import '~@ionic/angular/css/ionic-swiper';
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 250px
+}
+ion-card{
+    width: 39%;
+    margin: 7px;
+}
+
+.image{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+p{
+    text-align: center;
+}
+.swip{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}

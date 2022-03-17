@@ -1,0 +1,24 @@
+<ion-content>
+  <h3>Demande du {{message?.dateDemande | date: ('dd-MM-YYYY')}}</h3>
+  <ion-row>
+    <h4><b>Type déchet: </b>{{message?.annonce.categorie}}</h4>
+  </ion-row>
+  <ion-row>
+    <h4><b>Type déchet: </b>{{message?.annonce.categorie}}</h4>
+  </ion-row>
+  <ion-row>
+    <h4><b>Description: </b></h4>
+  </ion-row>
+  <ion-row>
+    <p>{{message?.annonce.description}}</p>
+  </ion-row>
+  <ion-row>
+    <h4><b>Infos demande: </b></h4>
+  </ion-row>
+  <ion-row>
+    <p><b>Etat demande: </b>{{message?.etatAnnonce}}</p>
+  </ion-row>
+  <ion-row>
+    <p><b>Date acceptation: </b>{{message?.dateDemandeAccept | date: ('dd-MM-YYYY')}}</p>
+  </ion-row>
+</ion-content>

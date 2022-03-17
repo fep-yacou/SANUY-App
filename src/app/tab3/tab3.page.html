@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Tab 3
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form #formDonnee="ngForm" (ngSubmit)="register(formDonnee)">
+        <ion-list>
+            <ion-item>
+                <ion-label>Nom </ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username" autofocus=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Prenom</ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Adresse Email</ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Adresse</ion-label>
+                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+            </ion-item>
+        </ion-list>
+        <div class="flex">
+            <ion-button color="primary" expand="" shape="round" routerLink="/accueil">Mes annonces</ion-button>
+            <ion-button color="primary" expand="" shape="round" routerLink="/accueil">Deconnexion</ion-button>
+        </div>
+    </form>
+</ion-content>

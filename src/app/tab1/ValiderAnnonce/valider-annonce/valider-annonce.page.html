@@ -1,0 +1,11 @@
+<ion-content class="hauteur">
+  <h4>Validation</h4>
+  <h5>TYPE : {{annonce.categorie}}</h5>
+  <ion-row class="ion-padding">
+    <ion-img class="taille-image" src="{{image}}+{{annonce.id_annonce}}"></ion-img>
+  </ion-row>
+  <ion-row class="ion-padding">
+    <ion-button color="danger" (click)="retour()">Annuler</ion-button>
+    <ion-button color="success" (click)="valider(annonce.id_annonce)">Valider</ion-button>
+  </ion-row>
+</ion-content>
