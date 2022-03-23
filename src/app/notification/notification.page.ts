@@ -21,7 +21,7 @@ notify: any;
       
       data.userView = 'lu';
       this.service.updateDemandeAnnonce(data.id, data).subscribe((det:any)=>{
-        this.service.setMessage(det);
+        this.service.setMessage(JSON.parse(det));
         this.router.navigate(['lire-message']);
       })
     })

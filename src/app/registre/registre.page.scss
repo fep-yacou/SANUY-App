@@ -1,49 +1,36 @@
-#container {
-    text-align: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: green;
-}
-
 .regi {
-    --ion-background-color: #ece6e6;
-}
-
-#container strong {
-    font-size: 20px;
-    line-height: 26px;
+    --ion-background-color: #EEEEEE;
 }
 
 .img_conn {
     height: 173px;
-    margin-left: -40px;
-    margin-top: -29px;
+    margin-left: -50px;
+    margin-top: -40px;
     width: 234px;
     object-fit: cover;
 }
 
-.button {
-    color: white;
-    border-bottom: yellow;
+ion-input{
+    border-radius: 20px !important;
+    font-size: 0.9em;
+    --background: #FFFFFF !important;
+     width: 42%;
+     margin-right: 10px;
+     margin-top: 10px;
+     margin-bottom: 8px;
 }
 
-#container p {
-    font-size: 16px;
-    line-height: 22px;
-    color: #8c8c8c;
-    margin: 0;
+.button{
+    height: 40px;
+    width: 100%;
+    margin-right: 10px;
+    margin-top: 30px;
+    font-size: 1em;
 }
 
-img {
-    width: 145px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#container a {
-    text-decoration: none;
+.para{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 6%;
 }

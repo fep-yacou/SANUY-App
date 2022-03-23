@@ -83,7 +83,7 @@ export class Tab2Page {
 
       this.service.updateAnnonce(data.id_annonce, data).subscribe((data) => {
         console.log("dataUpdate============", data);
-        this.router.navigate(['/tabs/tabs/tab1'])
+        this.router.navigate(['categorie'])
       })
     })
   }

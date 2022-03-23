@@ -23,7 +23,7 @@ export class CategorieServiceService {
     }
     //Modifier Categorie
     updateCategorie(id: any, part: any) {
-      return this.http.put(this.url + '/modifiercategorie/'+ id, part, {responseType:"text"});
+      return this.http.put(this.url + '/modifiercategorie/'+ id, part);
     }
     //Details Categorie
     detailCategorie(id_participant: any) {

@@ -1,34 +1,29 @@
-<ion-header [translucent]="true">
-    <ion-toolbar>
-        <ion-title>
-            Tab 3
-        </ion-title>
-    </ion-toolbar>
-</ion-header>
-
 <ion-content>
-    <form #formDonnee="ngForm" (ngSubmit)="register(formDonnee)">
-        <ion-list>
-            <ion-item>
-                <ion-label>Nom </ion-label>
-                <ion-input type="text" placeholder="username" ngModel name="username" autofocus=""></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label>Prenom</ion-label>
-                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label>Adresse Email</ion-label>
-                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label>Adresse</ion-label>
-                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
-            </ion-item>
-        </ion-list>
-        <div class="flex">
-            <ion-button color="primary" expand="" shape="round" routerLink="/accueil">Mes annonces</ion-button>
-            <ion-button color="primary" expand="" shape="round" routerLink="/accueil">Deconnexion</ion-button>
+    <div class="header">
+        <h2>Profil</h2>
+        <!-- <div class="space-between">
+          <div class="followings">
+            <ion-badge color="primary" mode="ios">42</ion-badge>
+            <p>Abonnés</p>
+          </div>
+          <div class="followings">
+            <ion-badge color="primary" mode="ios">42</ion-badge>
+            <p>Abonnements</p>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="flex1">
+        <div class="border-green">
+          <div class="border-white">
+            <div class="img-box">
+              <img src="../../assets/img/user.png">
+            </div>
+          </div>
         </div>
-    </form>
+      </div>
+    <!-- <div class="flex">
+        <ion-button color="primary" expand="" shape="round" routerLink="/accueil">Mes annonces</ion-button>
+        <ion-button color="primary" expand="" shape="round" routerLink="/accueil">Deconnexion</ion-button>
+    </div> -->
 </ion-content>

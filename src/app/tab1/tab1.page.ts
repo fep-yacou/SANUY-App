@@ -4,6 +4,7 @@ import { AnnonceServiceService } from '../Services/annonce-service.service';
 import { IonSlides, PopoverController } from '@ionic/angular';
 import { ValiderAnnoncePage } from './ValiderAnnonce/valider-annonce/valider-annonce.page';
 import { ActivatedRoute } from '@angular/router';
+import { CategorieServiceService } from '../categorie/categorie-service.service';
 
 @Component({
   selector: 'app-tab1',
@@ -11,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit {
+  listCategorie : any;
   photo = environment.URLPhoto;
   annonce : any;
   id : number;
@@ -19,7 +21,8 @@ export class Tab1Page implements OnInit {
   constructor(
     private aService : AnnonceServiceService,
     public popover: PopoverController,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    public categorieService: CategorieServiceService,
   ) { }
   slideOpts = {
     initialSlide: 1,
@@ -29,6 +32,7 @@ export class Tab1Page implements OnInit {
 
   };
   ngOnInit() {
+    this.getCategorie();
     this.id = this.route.snapshot.params['id'];
     this.getAnnonce();
     console.log(this.id);
@@ -36,8 +40,21 @@ export class Tab1Page implements OnInit {
   }
 
   getAnnonce(){
-    this.aService.listeAnnonceByCategorie(this.id).subscribe(data =>{
+    this.aService.listeAnnonce().subscribe(data =>{
       this.annonce = data;
+    })
+  }
+
+  // getAnnonce(){
+  //   this.aService.listeAnnonceByCategorie(this.id).subscribe(data =>{
+  //     this.annonce = data;
+  //   })
+  // }
+
+  getCategorie(){
+    this.categorieService.listeCategorie().subscribe(res=>{
+      this.listCategorie = res;
+      console.log(this.listCategorie); 
     })
   }
   

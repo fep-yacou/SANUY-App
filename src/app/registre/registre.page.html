@@ -1,37 +1,52 @@
 <ion-content class="regi">
     <div class="img_conn" style="background-image: url('../../../assets/img/shapes.png')"></div>
-    <strong>Bienvenue sur SANUY@</strong>
-    <form #formDonnee="ngForm" (ngSubmit)="register(formDonnee)">
-        <ion-list>
-            <ion-item>
-                <ion-label>Nom utilisateur</ion-label>
-                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+
+    <div class="ion-text-center">
+        <h3><strong>Bienvenue sur SANUY@</strong></h3>
+    </div>
+
+    <p class="para">
+        Comment gérez-vous vos déchets ?
+        Si ce n'est pas le cas, commencez dès maintenant !
+    </p>
+
+    <div class="center">
+        <form>
+            <ion-item lines="none">
+                <ion-input type="text" placeholder="Entrez votre nom"></ion-input>
             </ion-item>
-        </ion-list>
-        <ion-list>
-            <ion-item>
-                <ion-label>Prenom utilisateur</ion-label>
-                <ion-input type="text" placeholder="username" ngModel name="username"></ion-input>
+
+            <ion-item lines="none">
+                <ion-input type="text" placeholder="Entrez votre prenom"></ion-input>
             </ion-item>
-        </ion-list>
-        <ion-list>
-            <ion-item>
-                <ion-label>Email</ion-label>
-                <ion-input type="email" placeholder="Adresse email" ngModel name="usermail"></ion-input>
+
+            <ion-item lines="none">
+                <ion-input type="text" placeholder="Entrez votre email"></ion-input>
             </ion-item>
-        </ion-list>
-        <ion-list>
-            <ion-item>
-                <ion-label color="">Mot de passe</ion-label>
-                <ion-input color="#OcObOb" type="password" placeholder="Mot de passe" ngModel name="password"></ion-input>
+
+            <ion-item lines="none">
+                <ion-input type="text" placeholder="Entrez votre numero de telephone"></ion-input>
             </ion-item>
-        </ion-list>
-        <ion-list>
-            <ion-item>
-                <ion-label color="">Votre localisation</ion-label>
-                <ion-input color="#OcObOb" type="password" placeholder="Mot de passe" ngModel name="password"></ion-input>
+
+            <ion-item lines="none">
+                <ion-input type="text" placeholder="Entrez votre login"></ion-input>
             </ion-item>
-        </ion-list>
-        <ion-button color="success" expand="block" shape="" routerLink="/password">Inscription</ion-button>
-    </form>
+
+            <ion-item lines="none">
+                <ion-input type="password" placeholder="Entrez votre mot de passe"></ion-input>
+            </ion-item>
+
+            <ion-item lines="none">
+                <ion-input type="password" placeholder="Confirmez votre mot de passe"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-button class="button" color="success" routerLink="/password">Inscription</ion-button>
+            </ion-item>
+
+            <ion-item>
+                <a routerLink="/password">Vous avez deja un compte?</a>
+            </ion-item>
+        </form>
+    </div>
 </ion-content>
