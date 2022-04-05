@@ -37,3 +37,7 @@
 @import '~swiper/scss/scrollbar';
 @import '~swiper/scss/zoom';
 @import '~@ionic/angular/css/ionic-swiper';
+
+.transparent-modal .modal-wrapper {
+    --background: rgba(44, 39, 45, 0.7);
+}

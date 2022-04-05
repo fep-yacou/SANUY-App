@@ -13,7 +13,7 @@ import { CategorieServiceService } from '../categorie/categorie-service.service'
 })
 export class Tab1Page implements OnInit {
   listCategorie : any;
-  photo = environment.URLPhoto;
+  photo = environment.URLPhotoAnnonce;
   annonce : any;
   id : number;
 

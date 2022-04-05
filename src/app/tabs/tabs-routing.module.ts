@@ -25,7 +25,7 @@ const routes: Routes = [
       },
       {
       path: 'tab5',
-      loadChildren: () => import('../liste/liste.module').then(m => m.ListePageModule)
+      loadChildren: () => import('../categorie/categorie.module').then(m => m.CategoriePageModule)
       },
       {
         path: '',

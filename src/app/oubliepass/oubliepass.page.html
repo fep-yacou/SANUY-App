@@ -1,24 +1,21 @@
 <ion-content class="mdp">
     <div class="img_conn" style="background-image: url('../../../assets/img/shapes.png')"></div>
-    <form #formDonnee="ngForm" (ngSubmit)="register(formDonnee)">
-        <ion-list>
-            <ion-item>
-                <ion-label>Email</ion-label>
-                <ion-input type="email" placeholder="Adresse email" ngModel name="usermail"></ion-input>
-            </ion-item>
-        </ion-list>
-        <ion-list>
-            <ion-item>
-                <ion-label color="">Mot de passe</ion-label>
-                <ion-input color="#OcObOb" type="password" placeholder="Mot de passe" ngModel name="password"></ion-input>
-            </ion-item>
-        </ion-list>
-        <ion-list>
-            <ion-item>
-                <ion-label color="">Confirme mot de passe</ion-label>
-                <ion-input color="#OcObOb" type="password" placeholder="Mot de passe" ngModel name="password"></ion-input>
-            </ion-item>
-        </ion-list>
+    <form>
+        <ion-item lines="none">
+            <ion-label>Email</ion-label>
+            <ion-input type="email" placeholder="Adresse email" ngModel name="usermail"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label color="">Mot de passe</ion-label>
+            <ion-input color="#OcObOb" type="password" placeholder="Mot de passe" ngModel name="password"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label color="">Confirme mot de passe</ion-label>
+            <ion-input color="#OcObOb" type="password" placeholder="Mot de passe" ngModel name="password"></ion-input>
+        </ion-item>
+
         <div id=header>
             <img src="assets/img/mdp.png" width="50px">
         </div>

@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class LireMessagePage implements OnInit {
 message: any
-image = environment.URLPhoto
+image = environment.URLPhotoAnnonce
   constructor(public service: AnnonceServiceService) { }
 
   ngOnInit() {

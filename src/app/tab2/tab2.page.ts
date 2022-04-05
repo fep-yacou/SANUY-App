@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { CategorieServiceService } from '../categorie/categorie-service.service';
 import { AnnonceServiceService } from '../Services/annonce-service.service';
 
+import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
+
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -15,12 +17,15 @@ export class Tab2Page {
   submitted = false;
   formulaire: FormGroup;
   user: any;
+  lat: any;
+  lng: any;
 
   constructor(
     public categorieService: CategorieServiceService,
     public service: AnnonceServiceService,
     public router: Router,
-    public formBuilder: FormBuilder) { }
+    public formBuilder: FormBuilder,
+    private geo: Geolocation) { }
 
   ngOnInit(): void {
     this.listerCategorie();
@@ -37,6 +42,18 @@ export class Tab2Page {
   // get errorControl() {
   //   return this.annonce.controls; 
   // }
+
+  localiser(){
+    this.geo.getCurrentPosition({
+      timeout: 10000,
+      enableHighAccuracy: true
+    }).then((res) =>{
+      this.lat = res.coords.latitude;
+      this.lng = res.coords.longitude;
+    }).catch((e)=>{
+      console.log(e); 
+    });
+  }
 
   imgSelect(event) {
     const img = event.target.files[0];
@@ -83,7 +100,7 @@ export class Tab2Page {
 
       this.service.updateAnnonce(data.id_annonce, data).subscribe((data) => {
         console.log("dataUpdate============", data);
-        this.router.navigate(['categorie'])
+        this.router.navigate(['tabs/tabs/tab5'])
       })
     })
   }

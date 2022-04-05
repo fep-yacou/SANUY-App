@@ -8,25 +8,18 @@
 
 <ion-content>
     <div class="swip">
-    <swiper [loop]="true" [autoplay]="true"  [pagination]="true" >
-        <ng-template swiperSlide><img src="../../assets/img/dechets-metallique.jpg" alt=""></ng-template>
-        <ng-template swiperSlide><img src="../../assets/img/dechets-metallique.jpg" alt=""></ng-template>
-        <ng-template swiperSlide><img src="../../assets/img/dechets-metallique.jpg" alt=""></ng-template>
-    </swiper>
-</div>
-
-    <!-- <ion-header>
-        <ion-toolbar>
-            <ion-title>
-                
-            </ion-title>
-        </ion-toolbar>
-    </ion-header> -->
+        <swiper [loop]="true" [autoplay]="true" [pagination]="true">
+            <ng-template swiperSlide><img src="../../assets/img/dechets-metallique.jpg" alt=""></ng-template>
+            <ng-template swiperSlide><img src="../../assets/img/dechets-metallique.jpg" alt=""></ng-template>
+            <ng-template swiperSlide><img src="../../assets/img/dechets-metallique.jpg" alt=""></ng-template>
+        </swiper>
+    </div>
 
     <div class="flex">
-        <ion-card *ngFor="let liste of listCategorie" routerLink="/tabs/tabs/tab1/{{liste.idcat}}">
-            <img src="{{photo}} + {{liste.idcat}}" class="cat">
-          <p>{{liste.type}}</p>
-        </ion-card>         
+        <ion-card *ngFor="let liste of listCategorie" routerLink="/detail-categorie/{{liste.idcat}}">
+            <img src="{{photo}} + {{liste?.idcat}}" class="cat">
+            <p>{{liste.type}}</p>
+        </ion-card>
     </div>
+
 </ion-content>

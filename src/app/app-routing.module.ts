@@ -38,7 +38,14 @@ const routes: Routes = [
     path: 'lire-message',
     loadChildren: () => import('./Message/lireMessage/lire-message/lire-message.module').then( m => m.LireMessagePageModule)
   },
-  
+  {
+    path: 'detail-categorie/:id',
+    loadChildren: () => import('./categorie/detail-categorie/detail-categorie.module').then( m => m.DetailCategoriePageModule)
+  },
+  {
+    path: 'profile-photo-option',
+    loadChildren: () => import('./profile-photo-option/profile-photo-option.module').then( m => m.ProfilePhotoOptionPageModule)
+  }
   
   
   
