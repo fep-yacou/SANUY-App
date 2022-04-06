@@ -7,16 +7,17 @@
 
 <ion-content>
 
-    <div class="post_img" *ngFor="let a of annonce">
+    <div class="post_img" *ngFor="let a of annonce | orderBy : key : reverse">
         <ion-item lines="none">
             <ion-avatar><img class="avatar" src="../../assets/img/user.png"></ion-avatar>
             <p>Nom d'utilisateur <br>
-                Publie le: <ion-note>14-03-2022 13h33</ion-note>
+                Publie le: <ion-note>{{a?.date_publication | date: ('dd-MM-YYYY')}} {{a?.heure_publication}}</ion-note>
             </p>
 
             <ion-button color="success" shape="round" slot="end" (click)="obtenir(a.id_annonce)">Obtenir</ion-button>
         </ion-item>
-        Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page
+        <p>{{a.description}}</p>
+        <!-- Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page -->
         <img src="{{photo}} + {{a.id_annonce}}">
         <!-- <h4>{{a.description}}</h4> -->
     </div>

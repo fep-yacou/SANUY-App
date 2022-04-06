@@ -19,6 +19,7 @@ export class Tab2Page {
   user: any;
   lat: any;
   lng: any;
+  isChecked = false;
 
   constructor(
     public categorieService: CategorieServiceService,
@@ -32,8 +33,8 @@ export class Tab2Page {
     this.formulaire = this.formBuilder.group({
       description: ['', Validators.required],
       categorie: ['', Validators.required],
-      ville: [''],
-      quartier: [''],
+      ville: ['', Validators.required],
+      quartier: ['', Validators.required]
     });
     this.user = JSON.parse(localStorage.getItem("userData"));
     console.log(this.user);
@@ -43,17 +44,29 @@ export class Tab2Page {
   //   return this.annonce.controls; 
   // }
 
-  localiser(){
+  localiser() {
     this.geo.getCurrentPosition({
       timeout: 10000,
       enableHighAccuracy: true
-    }).then((res) =>{
+    }).then((res) => {
       this.lat = res.coords.latitude;
       this.lng = res.coords.longitude;
-    }).catch((e)=>{
-      console.log(e); 
+    }).catch((e) => {
+      console.log(e);
     });
   }
+
+  getValue() {
+    this.isChecked = !this.isChecked;
+    if (this.isChecked) {
+      this.localiser();
+    }
+    else {
+      this.lng = "";
+      this.lat = "";
+    }
+  }
+
 
   imgSelect(event) {
     const img = event.target.files[0];
@@ -76,13 +89,15 @@ export class Tab2Page {
     let quartier = this.formulaire.value['quartier'];
 
     this.service.ajoutAnnonce(file).subscribe((data) => {
-     
+
       data.description = description,
         data.categorie = {
           idcat: categorie
         },
         data.ville = ville,
-        data.quartier = quartier
+        data.quartier = quartier,
+        data.longitude = this.lng,
+        data.latitude = this.lat
 
       if (this.user.type == 'SimpleUtilisateur') {
         data.utilisateur = this.user

@@ -32,6 +32,13 @@ export class DetailCategoriePage implements OnInit {
     console.log(this.id);
   }
 
+  key : string = 'id';
+  reverse : boolean = false;
+  sort ( key : string ){
+    this.key = key;
+  this.reverse=!this.reverse
+  }
+
   // getAnnonce() {
   //   this.aService.detailCategorie(this.id).subscribe(data => {
   //     this.annonce = data;

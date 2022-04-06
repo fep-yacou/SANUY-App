@@ -45,6 +45,13 @@ export class Tab1Page implements OnInit {
     })
   }
 
+  key : string = 'id';
+  reverse : boolean = false;
+  sort ( key : string ){
+    this.key = key;
+  this.reverse=!this.reverse
+  }
+
   // getAnnonce(){
   //   this.aService.listeAnnonceByCategorie(this.id).subscribe(data =>{
   //     this.annonce = data;
