@@ -1,3 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tabs/tab4"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
   <h3>Demande du {{message.dateDemande | date: ('dd-MM-YYYY')}}</h3>
   <ion-row>
@@ -17,5 +25,8 @@
   </ion-row>
   <ion-row>
     <p><b>Date acceptation: </b>{{message.dateDemandeAccept | date: ('dd-MM-YYYY')}}</p>
+  </ion-row>
+  <ion-row>
+    <p><b>Verifiez votre mail pour plus de détail</b></p>
   </ion-row>
 </ion-content>

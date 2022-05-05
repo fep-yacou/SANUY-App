@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    SwiperModule
+    SwiperModule,
+    Ng2OrderModule
   ],
   providers: [Geolocation, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

@@ -1,12 +1,21 @@
+<<<<<<< HEAD
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
     </ion-title>
+=======
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tabs/tab5"></ion-back-button>
+    </ion-buttons>
+>>>>>>> 41cd1a971dd1be31601845d296b83e1472dc2bfa
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+<<<<<<< HEAD
   <div class="post_img">
     <ion-item lines="none">
       <ion-avatar><img class="avatar" src="../../assets/img/user.png"></ion-avatar>
@@ -21,5 +30,21 @@
     <img src="{{photo}} + {{annonce?.id_annonce}}">
     <!-- <h4>{{a.description}}</h4> -->
   </div>
+=======
+  <div class="post_img" *ngFor="let a of annonce | orderBy : key : reverse">
+    <ion-item lines="none">
+        <ion-avatar><img class="avatar" src="../../assets/img/user.png"></ion-avatar>
+        <p>Nom d'utilisateur <br>
+            Publie le: <ion-note>{{a?.date_publication | date: ('dd-MM-YYYY')}} {{a?.heure_publication}}</ion-note>
+        </p>
+
+        <ion-button color="success" shape="round" slot="end" (click)="obtenir(a.id_annonce)">Obtenir</ion-button>
+    </ion-item>
+    <p>{{a.description}}</p>
+    <!-- Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page -->
+    <img src="{{photo}} + {{a.id_annonce}}">
+    <!-- <h4>{{a.description}}</h4> -->
+</div>
+>>>>>>> 41cd1a971dd1be31601845d296b83e1472dc2bfa
 
 </ion-content>

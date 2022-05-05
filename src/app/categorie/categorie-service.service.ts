@@ -7,11 +7,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CategorieServiceService {
-  url = environment.URL
+  url = environment.URL;
+  idAnnonce: any;
 
   constructor(
     private http: HttpClient,
   ) { }
+
+  setIdAnnonce(data: any){this.idAnnonce = data}
+  getIdAnnonce(){return this.idAnnonce}
 
     //liste Categorie
     listeCategorie() {

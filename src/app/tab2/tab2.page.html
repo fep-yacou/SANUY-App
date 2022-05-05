@@ -47,13 +47,12 @@
 
         <div class="container">
             <p>Lat: {{lat}}, Lng: {{lng}}</p>
-            <ion-button (click)="localiser()">
-                locate
-            </ion-button>
+            <ion-label>Position</ion-label>
+            <ion-toggle (click)="getValue()"></ion-toggle>
         </div>
 
         <div class="flex">
-            <ion-button type="submit" color="success" shape="round">
+            <ion-button [disabled]="!formulaire.valid" type="submit" color="success" shape="round">
                 Ajouter
             </ion-button>
             <ion-button color="danger" shape="round">
