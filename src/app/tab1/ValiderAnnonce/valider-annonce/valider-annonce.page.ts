@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class ValiderAnnoncePage implements OnInit {
   idAnnonce: any;
   annonce: any;
-  image = environment.URLPhoto;
+  image = environment.URLPhotoAnnonce;
   userConnect: any
 
   constructor(

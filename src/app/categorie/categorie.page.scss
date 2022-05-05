@@ -4,19 +4,22 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 250px
+    margin-top: 200px;
+    // gap: 1rem;
 }
 ion-card{
-    width: 39%;
-    margin: 7px;
+    width: 40%;
+    // margin: 7px;
+    margin-left: 6px;
+    margin-right: 6px;
 }
 
-.image{
-    width: 70%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-}
+// .image{
+//     width: 70%;
+//     margin: auto;
+//     display: flex;
+//     justify-content: center;
+// }
 p{
     text-align: center;
 }

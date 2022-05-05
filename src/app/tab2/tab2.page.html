@@ -45,6 +45,13 @@
             <ion-input name="quartier" formControlName="quartier" placeholder="quartier" type="text"></ion-input>
         </ion-item>
 
+        <div class="container">
+            <p>Lat: {{lat}}, Lng: {{lng}}</p>
+            <ion-button (click)="localiser()">
+                locate
+            </ion-button>
+        </div>
+
         <div class="flex">
             <ion-button type="submit" color="success" shape="round">
                 Ajouter

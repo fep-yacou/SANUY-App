@@ -11,37 +11,108 @@
     </p>
 
     <div class="center">
-        <form>
+        <form #user="ngForm" (ngSubmit)="ajoutUtilisateur(user)" novalidate>
             <ion-item lines="none">
-                <ion-input type="text" placeholder="Entrez votre nom"></ion-input>
+                <ion-label>Nom</ion-label>
+                <ion-input type="text" placeholder="Entrez votre nom" name="nom" required pattern="[a-zA-Z]+"
+                    [(ngModel)]="users.nom" #nom="ngModel"></ion-input>
+
+                <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="alert">
+                    <b *ngIf="nom.errors?.['required']">
+                        Le nom est obligatoire !
+                    </b>
+                    <b *ngIf="nom.errors?.['pattern']">
+                        Le nom doit être composé que des lettres !
+                    </b>
+                </div>
             </ion-item>
 
             <ion-item lines="none">
-                <ion-input type="text" placeholder="Entrez votre prenom"></ion-input>
+                <ion-label>Prenom</ion-label>
+                <ion-input type="text" placeholder="Entrez votre prenom" name="prenom" required pattern="[a-zA-Z]+"
+                    [(ngModel)]="users.prenom" #prenom="ngModel">
+                </ion-input>
+
+                <p *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="alert">
+                    <b *ngIf="prenom.errors?.['required']">
+                        Le prénom est obligatoire !
+                    </b>
+                    <b *ngIf="nom.errors?.['pattern']">
+                        Le prénom doit être composé que des lettres !
+                    </b>
+                </p>
             </ion-item>
 
             <ion-item lines="none">
-                <ion-input type="text" placeholder="Entrez votre email"></ion-input>
+                <ion-label>Email</ion-label>
+                <ion-input type="text" placeholder="Entrez votre email" name="email" id="example-email" required
+                    [(ngModel)]="users.email" #email="ngModel" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})">
+                </ion-input>
+
+                <p *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+                    <b *ngIf="email.errors?.['required']">
+                        L'email est obligatoire !
+                    </b>
+                    <b *ngIf="email.errors?.['pattern']">
+                        L'email doit être de type exemple@exemple.domaine !
+                    </b>
+                </p>
+                <p class="alert"><b>{{errorEmail}}</b></p>
             </ion-item>
 
             <ion-item lines="none">
-                <ion-input type="text" placeholder="Entrez votre numero de telephone"></ion-input>
+                <ion-label>Tel</ion-label>
+                <ion-input type="text" placeholder="Entrez votre numero" name="tel" required pattern="[0-9]{8}"
+                    [(ngModel)]="users.telephone" #telephone="ngModel"></ion-input>
+
+                <p *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)" class="alert">
+                    <b *ngIf="telephone.errors?.['required']">
+                        Le numéro de téléphone est obligatoire !
+                    </b>
+                    <b *ngIf="telephone.errors?.['pattern']">
+                        Le numéro de téléphone doit être de 8 chiffres !
+                    </b>
+                </p>
             </ion-item>
 
             <ion-item lines="none">
-                <ion-input type="text" placeholder="Entrez votre login"></ion-input>
+                <ion-label>Nom d'utilisateur</ion-label>
+                <ion-input type="text" placeholder="Entrez votre nom d'utilisateur" required pattern="[a-zA-Z0-9]+"
+                    name="login" [(ngModel)]="users.login" #login="ngModel"></ion-input>
+
+                <p *ngIf="login.invalid && (login.dirty || login.touched)" class="alert">
+                    <b *ngIf="login.errors?.['required']">
+                        Le login est obligatoire !
+                    </b>
+                    <b *ngIf="login.errors?.['pattern']">
+                        Le login doit être composé que des lettres !
+                    </b>
+                </p>
+                <p class="alert"><b>{{errorLogin}}</b></p>
             </ion-item>
 
             <ion-item lines="none">
-                <ion-input type="password" placeholder="Entrez votre mot de passe"></ion-input>
+                <ion-label>Mot de passe</ion-label>
+                <ion-input type="password" placeholder="Entrez votre mot de passe" required pattern="" name="password"
+                    [(ngModel)]="users.password" #password="ngModel"></ion-input>
+
+                <p *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+                    <b *ngIf="password.errors?.['required']">
+                        Le mot de passe est obligatoire !
+                    </b>
+                    <b *ngIf="password.errors?.['pattern']">
+                        Le mot de passe doit être composé d'au moins 8 caracteres!
+                    </b>
+                </p>
             </ion-item>
 
             <ion-item lines="none">
+                <ion-label>Mot de passe</ion-label>
                 <ion-input type="password" placeholder="Confirmez votre mot de passe"></ion-input>
             </ion-item>
 
             <ion-item>
-                <ion-button class="button" color="success" routerLink="/password">Inscription</ion-button>
+                <ion-button type="submit" color="success" [disabled]="user.invalid">S'inscrire</ion-button>
             </ion-item>
 
             <ion-item>

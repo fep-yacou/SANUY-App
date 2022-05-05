@@ -23,7 +23,7 @@ export class PasswordPage implements OnInit {
         (data:any)=> {
           if (data!=null) {
             localStorage.setItem('userData', JSON.stringify(data))
-           this.route.navigateByUrl('tabs/tabs/tab1');
+           this.route.navigateByUrl('tabs/tabs/tab5');
           }
         }
       )

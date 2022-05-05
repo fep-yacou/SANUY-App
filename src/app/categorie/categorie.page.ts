@@ -11,7 +11,7 @@ SwiperCore.use([Autoplay, Keyboard, Pagination, Scrollbar, Zoom]);
   styleUrls: ['./categorie.page.scss'],
 })
 export class CategoriePage implements OnInit {
-  photo = environment.URLPhoto;
+  photo = environment.URLPhotoCat;
   listCategorie : any;
 
   constructor(

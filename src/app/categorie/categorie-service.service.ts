@@ -26,8 +26,8 @@ export class CategorieServiceService {
       return this.http.put(this.url + '/modifiercategorie/'+ id, part);
     }
     //Details Categorie
-    detailCategorie(id_participant: any) {
-      return this.http.get(this.url + '/infoannonce/${id_participant}');
+    detailCategorie(id: any) {
+      return this.http.get(this.url + '/infoannonce/'+ id);
     }
   
     //Supprimer Categorie
